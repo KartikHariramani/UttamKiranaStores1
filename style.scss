@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    display: flex;
+    background-color: azure;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;  /* Added to align items vertically */
+    padding: 0 10px;
+    box-shadow: 1px 1px rgb(73, 87, 240);
+}
+
+.kamal2 {
+    height: 100px;
+    width: auto;
+    border-radius: 10px;
+}
+
+a {
+    padding: 10px;
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+a:hover {
+    color: black;
+}
+
+.kamal1 {
+    margin-left: 20%;
+    display: flex;
+    align-items: center; /* Ensure nav items are vertically centered */
+}
+
+.kamal4 {
+    height: 1rem;
+    margin-left: 35%;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.kamal3 {
+    height: 1.5rem;
+    background-color: rgb(36, 127, 206);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.kamal5 {
+    height: 1.5rem;
+    background-color: rgb(255, 60, 0);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.kamal5:hover {
+    height: 50px;
+    width: auto;
+    color: aliceblue;
+    background-color: rgb(10, 232, 69);
+}
+
+.kamal6 {
+    text-align: center;
+    color: rgb(255, 34, 34);
+    margin-top: 3%;
+    text-decoration: underline;
+    text-shadow: 1px 1px red;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.kamal8 {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.kamal7 {
+    text-align: center;
+    color: rgb(0, 26, 255);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.kamal9 {
+    height: 250px;
+    width: auto;
+    margin-left: 34%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.kamal0 {
+    float: right;
+    border-radius: 20px;
+    height: 50px;
+}
+
+.kamal10 {
+    margin-left: 45%;
+    border-radius: 10px;
+    background-color: rgb(25, 229, 134);
+    height: 30px;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.kamal10:hover {
+    background-color: rgb(250, 22, 243);
+    height: 40px;
+    width: auto;
+}
+
+.kamal11 {
+    text-align: center;
+    background-color: rgb(32, 154, 154);
+    margin-top: 20px;
+    margin-top: 2%;
+}
+
+.kamal19 {
+    color: rgb(255, 115, 0);
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: dotted;
+}
+
+.kamal19:hover {
+    color: white;
+}
+.gro{
+    margin-left: 13%;
+}
+
+#kamal1, #kamal2, #kamal3, #kamal4 {
+    height: 100px;
+    border-radius: 2rem;
+    margin-left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+   
+    .box {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+    .kamal1 {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .kamal2 {
+        margin-left: 0;
+        justify-content: center;
+    }
+    .kamal4 {
+        margin-left: 0;
+        width: 100%;
+    }
+    .kamal9 {
+        margin-left: 0;
+        width: 80%;
+        height: auto;
+        margin-top: 5%;
+    }
+    .kamal3, .kamal5 {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .kamal10 {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    * {
+        text-align: center;
+        justify-content: center;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .kamal2 {
+        margin-left: 0;
+    }
+    .kamal1 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .kamal4 {
+        margin-left: 0;
+        width: 80%;
+    }
+    .kamal3, .kamal5 {
+        width: 80%;
+        margin-top: 10px;
+    }
+    .kamal9 {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+    }
+    .kamal10 {
+        width: 90%;
+        margin-left: 0;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+}

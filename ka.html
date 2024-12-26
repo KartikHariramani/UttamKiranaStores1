@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
+    <script type="text/javascript" src="ka.js"></script>
+    <style>
+        /* Style for floating cart section */
+        #cart-container {
+            position: fixed; /* Fixes the position of the cart */
+            right: 20px; /* Align it to the right of the page */
+            top: 100px; /* A little padding from the top */
+            width: 250px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            border: 2px solid #ddd;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it's on top */
+        }
+
+        #cart-items {
+            margin-top: 10px;
+            padding: 5px;
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+
+        .cartImg {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cartImg img {
+            width: 80px; /* Resize image to fit */
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .cartImg .details {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .cartImg .details span {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        /* Style for Place Order button */
+        .place-order-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .place-order-btn:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html"><img src="home.jpg" alt="home" class="home"></a>
+    <img src="basket.jpg" alt="home" class="home2">
+    <h2 class="kamal1">Our Product's</h2>
+
+    <div class="kamal9">
+        <!-- Product Boxes -->
+        <div class="box" data-name="DRY FRUITS" data-price="250.00">
+            <img src="dryfruits.webp" alt="Dry Fruits"><br>
+            <span class="kamal2">DRY FRUITS</span>
+            <br>PRICE : 250.00/ 250G <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Oil" data-price="150.00">
+            <img src="oil.jpg" alt="Oil"><br>
+            <span class="kamal3">Oil</span>
+            <br>Price : 150.00/liter <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="PULSES" data-price="150.00">
+            <img src="pulses.jpg" alt="Pulses"><br>
+            <span class="kamal4">PULSES</span>
+            <br>PRICE : 150.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Rice" data-price="70.00">
+            <img src="rice.jpg" alt="Rice"><br>
+            <span class="kamal5">Rice</span>
+            <br>PRICE : 70.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Wheat" data-price="35.00">
+            <img src="wheat.jpg" alt="Wheat"><br>
+            <span>Wheat</span>
+            <br>PRICE : 35.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+    </div>
+
+    <div class="kamal9">
+        <!-- More Product Boxes -->
+        <div class="box" data-name="Sugar" data-price="45.00">
+            <img src="sugar.jpg" alt="Sugar"><br>
+            <span class="kamal2">Sugar</span>
+            <br>PRICE : 45.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Salt" data-price="28.00">
+            <img src="salt.jpg" alt="Salt"><br>
+            <span class="kamal3">Salt</span>
+            <br>Price : 28.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Spices" data-price="250.00">
+            <img src="spices.jpg" alt="Spices"><br>
+            <span class="kamal4">Spices</span>
+            <br>PRICE : 250.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Pasta" data-price="120.00">
+            <img src="pasta.jpg" alt="Pasta"><br>
+            <span class="kamal5">Pasta</span>
+            <br>PRICE : 120.00/kg <br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+        <div class="box" data-name="Soya Chucks" data-price="35.00">
+            <img src="soya.jpg" alt="Soya Chucks"><br>
+            <span>Soya Chucks</span>
+            <br>PRICE : 35.00/250g<br>
+            <button class="btn" onclick="addTocart(this.closest('.box'))">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Floating Cart Container to Display Added Items -->
+    <div id="cart-container">
+        <h3>Your Cart:</h3>
+        <div id="cart-items"></div>
+        <!-- Place Order Button -->
+        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+</body>
+</html>

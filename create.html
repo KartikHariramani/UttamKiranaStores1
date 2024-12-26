@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        div {
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 15%;
+            background-color: rgba(255, 255, 255, 0.63);
+            width: 400px;
+            margin-left: 10%;
+            color: rgb(175, 0, 0);
+        }
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .kamal4 {
+            height: 60px;
+            float: left;
+            margin-top: -14%;
+            border-radius: 10px;
+        }
+        h2 {
+            color: red;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .kamal8 {
+            margin-left: 30%;
+            margin-right: 23%;
+            height: 50px;
+            width: auto;
+            border-radius: 10px;
+            margin-top: 10%;
+            justify-content: center;
+        }
+        label{
+            font-size: 20px;
+            width: 100px;
+            display: inline-block;
+        }
+        @media screen and (max-width: 400px) {
+            body {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: rgb(0, 174, 255);
+                background-image: none;
+            }
+            .kamal1 {
+                justify-content: center;
+                text-align: center;
+                margin-left: 30px;
+                margin-top: 200px;
+                width: 200px;
+            }
+            .kamal4 {
+                float: left;
+                margin-top: -200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html"><img class="kamal4" src="home.jpg" alt=""></a>
+    <form onsubmit="return data()">
+        <div class="kamal1">
+            <a href="index.html"><img class="kamal8" src="logo.jpeg"></a>
+            <h2> Uttam Kirana Stores</h2>
+            <h3>Create an account.</h3>
+            <br>
+         <label>   Name:</label> <input type="text" placeholder="Enter Your Name" id="name"><br><br>
+         <label>   Password:</label> <input id="one" type="password" placeholder="Enter Your Password " required><br><br>
+            <label>    Password Again:</label> <input id="t" type="password" placeholder="Enter Your Password Again"><br><br>
+            <label>   Email:</label> <input id="th" type="email" placeholder="Enter Your Email Here"><br><br>
+            <button class="kamal2" type="submit">Create</button>
+        </div>
+    </form>
+
+    <script>
+        function data() {
+            let one = document.querySelector("#one");
+            let t = document.querySelector("#t");
+            let th = document.querySelector("#th");
+            let name = document.querySelector("#name");
+
+            // Check if all fields are filled
+            if (one.value === "" || t.value === "" || th.value === "" || name.value === "") {
+                alert("All fields are necessary.");
+                return false;
+            }
+
+            // Check if passwords match
+            if (one.value !== t.value) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            // Check if password is at least 6 characters long
+            if (one.value.length < 6 || t.value.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            // Retrieve existing users from localStorage (if any)
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+           
+           
+
+            // Create a new user object
+            let newUser = {
+                username: name.value,
+                password: one.value,  // Password should be stored as plaintext for now
+                email: th.value
+            };
+
+            // Add the new user to the users array
+            users.push(newUser);
+
+            // Save the updated users array to localStorage
+            localStorage.setItem("users", JSON.stringify(users));
+
+            // Redirect to another page or show success message
+            alert("Account created successfully!");
+            window.location.href = "form.html";  // Redirect to the home page or login page
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
